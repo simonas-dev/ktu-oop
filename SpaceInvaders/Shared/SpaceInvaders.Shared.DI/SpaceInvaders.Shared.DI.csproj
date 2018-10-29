@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.6.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Business\SpaceInvaders.Business.Controllers\SpaceInvaders.Business.Controllers.csproj" />
+    <ProjectReference Include="..\..\Presentation\SpaceInvaders.Presentation.Views.Interfaces\SpaceInvaders.Presentation.Views.Interfaces.csproj" />
+    <ProjectReference Include="..\..\Presentation\SpaceInvaders.Presentation.Views\SpaceInvaders.Presentation.Views.csproj" />
+    <ProjectReference Include="..\..\Presentation\SpaceInvaders.Presentation.Windows\SpaceInvaders.Presentation.Windows.csproj" />
+    <ProjectReference Include="..\SpaceInvaders.Shared.Base\SpaceInvaders.Shared.Base.csproj" />
+  </ItemGroup>
+
+</Project>

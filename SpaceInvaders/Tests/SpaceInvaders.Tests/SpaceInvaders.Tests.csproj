@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.3.0-preview-20170628-02" />
+    <PackageReference Include="xunit" Version="2.2.0" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Business\SpaceInvaders.Business.Commands\SpaceInvaders.Business.Commands.csproj" />
+    <ProjectReference Include="..\..\Business\SpaceInvaders.Business.Contracts\SpaceInvaders.Business.Contracts.csproj" />
+    <ProjectReference Include="..\..\Business\SpaceInvaders.Business.Controllers.Interfaces\SpaceInvaders.Business.Controllers.Interfaces.csproj" />
+    <ProjectReference Include="..\..\Business\SpaceInvaders.Business.Controllers\SpaceInvaders.Business.Controllers.csproj" />
+    <ProjectReference Include="..\..\Business\SpaceInvaders.Business.Services.Interfaces\SpaceInvaders.Business.Services.Interfaces.csproj" />
+    <ProjectReference Include="..\..\Business\SpaceInvaders.Business.Services\SpaceInvaders.Business.Services.csproj" />
+    <ProjectReference Include="..\..\Domain\SpaceInvaders.Domain.Models\SpaceInvaders.Domain.Models.csproj" />
+    <ProjectReference Include="..\..\Presentation\SpaceInvaders.Presentation.GUI\SpaceInvaders.Presentation.GUI.csproj" />
+    <ProjectReference Include="..\..\Presentation\SpaceInvaders.Presentation.Views.Interfaces\SpaceInvaders.Presentation.Views.Interfaces.csproj" />
+    <ProjectReference Include="..\..\Presentation\SpaceInvaders.Presentation.Views\SpaceInvaders.Presentation.Views.csproj" />
+    <ProjectReference Include="..\..\Presentation\SpaceInvaders.Presentation.Windows\SpaceInvaders.Presentation.Windows.csproj" />
+    <ProjectReference Include="..\..\Shared\SpaceInvaders.Shared.Base\SpaceInvaders.Shared.Base.csproj" />
+    <ProjectReference Include="..\..\Shared\SpaceInvaders.Shared.DI\SpaceInvaders.Shared.DI.csproj" />
+    <ProjectReference Include="..\..\Shared\SpaceInvaders.Shared.Repository\SpaceInvaders.Shared.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

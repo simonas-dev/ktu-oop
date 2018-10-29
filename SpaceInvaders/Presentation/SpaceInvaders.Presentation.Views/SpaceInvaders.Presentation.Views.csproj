@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Business\SpaceInvaders.Business.Commands\SpaceInvaders.Business.Commands.csproj" />
+    <ProjectReference Include="..\..\Business\SpaceInvaders.Business.Contracts\SpaceInvaders.Business.Contracts.csproj" />
+    <ProjectReference Include="..\..\Business\SpaceInvaders.Business.Controllers.Interfaces\SpaceInvaders.Business.Controllers.Interfaces.csproj" />
+    <ProjectReference Include="..\..\Shared\SpaceInvaders.Shared.Repository\SpaceInvaders.Shared.Repository.csproj" />
+    <ProjectReference Include="..\SpaceInvaders.Presentation.Views.Interfaces\SpaceInvaders.Presentation.Views.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>

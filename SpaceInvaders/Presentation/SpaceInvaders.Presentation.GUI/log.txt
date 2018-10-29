@@ -1,0 +1,20 @@
+[2017-02-12--16-37-18]: Mediator pattern: registering handlers 
+[2017-02-12--16-37-18]: Composite pattern: child 
+[2017-02-12--16-37-18]: Composite pattern: add 
+[2017-02-12--16-37-18]: Mediator pattern: qeury and handlers meeting 
+[2017-02-12--16-37-25]: Interpreter pattern: interpreting text: Select player profile John 
+[2017-02-12--16-37-26]: Composite pattern: display 
+[2017-02-12--16-37-26]: Composite pattern: child dsiplay 
+[2017-02-12--16-37-27]: Medium Visitor pattern: created 
+[2017-02-12--16-37-27]: Concrete Iterator: created 
+[2017-02-12--16-37-27]: Base Template mehtod pattern: drawing all objects 
+[2017-02-12--16-37-27]: Retro Template method pattern: drawing enemies 
+[2017-02-12--16-37-27]: Retro Template method pattern: drawing spaceship 
+[2017-02-12--16-37-29]: Concrete Iterator: first 
+[2017-02-12--16-37-29]: Concrete Iterator: done 
+[2017-02-12--16-37-29]: Concrete Iterator: next 
+[2017-02-12--16-37-29]: Medium Visitor pattern: add easy enemy score 
+[2017-02-12--16-37-31]: Medium Visitor pattern: add hard enemy score 
+[2017-02-12--16-37-34]: Medium Visitor pattern: add medium enemy score 
+[2017-02-12--16-37-37]: Chain of responsibility: handle request action 
+[2017-02-12--16-37-42]: State pattern: ended state action 

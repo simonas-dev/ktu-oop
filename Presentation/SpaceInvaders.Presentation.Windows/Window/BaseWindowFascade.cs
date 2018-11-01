@@ -24,7 +24,9 @@ namespace SpaceInvaders.Presentation.Windows.Window
 
         public BaseWindowFascade()
         {
-            Console.SetWindowSize(160,40);
+            try {
+                Console.SetWindowSize(160, 40);
+            } catch {}
             Console.CursorVisible = false;
         }
 

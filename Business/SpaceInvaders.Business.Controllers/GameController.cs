@@ -26,7 +26,7 @@ namespace SpaceInvaders.Business.Controllers
         public GameController(IEnumerable<IView> availableViews, IWindowFascade windowFascade, IBoardStrategy strategy)
             : base(availableViews, windowFascade)
         {
-            var game = Game.Instance;
+            Game game = Game.Instance;
 
             _strategy = strategy;
             _score = new RealScore();
@@ -44,7 +44,7 @@ namespace SpaceInvaders.Business.Controllers
 
         private Game GetGame()
         {           
-            var game = Game.Instance;
+            Game game = Game.Instance;
             if (_spaceShipPosition == null)
             {
                 _spaceShipPosition = game.Board?.GetPosition();
@@ -77,7 +77,7 @@ namespace SpaceInvaders.Business.Controllers
 
         public void Shoot()
         {
-            var game = Game.Instance;
+            Game game = Game.Instance;
             game.Board.Shoot();
         }
 

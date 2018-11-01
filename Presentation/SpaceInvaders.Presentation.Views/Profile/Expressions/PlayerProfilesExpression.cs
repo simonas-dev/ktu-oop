@@ -8,12 +8,10 @@ namespace SpaceInvaders.Presentation.Views.Profile.Expressions
 {
     public class PlayerProfilesExpression : Expression
     {
-        private readonly string _type;
         private readonly string _name;
 
-        public PlayerProfilesExpression(string type, string name)
+        public PlayerProfilesExpression(string name)
         {
-            _type = type;
             _name = name;
         }
 

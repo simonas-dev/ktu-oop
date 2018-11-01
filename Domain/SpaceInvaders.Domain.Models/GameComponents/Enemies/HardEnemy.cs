@@ -6,7 +6,7 @@ namespace SpaceInvaders.Domain.Models.GameComponents.Enemies
     {
         public HardEnemy()
         {
-            Health = 2;
+            Health = 3;
         }
 
         public override Enemy Clone()

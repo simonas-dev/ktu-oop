@@ -33,9 +33,11 @@ namespace SpaceInvaders.Domain.Models.GameComponents.Enemies.Collection
                 {
                     _items.Add(value);
                 }
-                else
+                else if (index != -1)
                 {
                     _items.RemoveAt(index);
+                } else {
+
                 }
             }
         }

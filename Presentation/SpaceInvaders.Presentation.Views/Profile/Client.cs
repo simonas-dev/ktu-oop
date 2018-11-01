@@ -22,18 +22,17 @@ namespace SpaceInvaders.Presentation.Views.Profile
 
             var expressionParts = expression.Split(" ");
 
-            if (expressionParts.Length < 4) throw new InvalidOperationException();
+            if (expressionParts.Length < 3) throw new InvalidOperationException();
 
             var command = expressionParts[0];
-            var type = expressionParts[1];
-            var entityType = expressionParts[2];
-            var name = expressionParts[3];
+            var entityType = expressionParts[1];
+            var name = expressionParts[2];
 
             if (command == "Select" || command == "select" || command == "SELECT")
             {
                 if (entityType == "Profile" || entityType == "profile" || entityType == "PROFILE")
                 {
-                    exp = new PlayerProfilesExpression(type, name);
+                    exp = new PlayerProfilesExpression(name);
                     return exp.Interpret(_context);
                 }
             }

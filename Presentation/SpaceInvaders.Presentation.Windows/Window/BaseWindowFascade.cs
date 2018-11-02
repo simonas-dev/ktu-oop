@@ -108,7 +108,7 @@ namespace SpaceInvaders.Presentation.Windows.Window
 
         private static void ClearLastLinesInWindow(int lines = 1)
         {
-            for (var i = 1; i <= lines; i++)
+            for (var i = 0; i < lines; i++)
             {
                 if (Console.CursorTop - 1 <= 0) continue;
                 Console.SetCursorPosition(0, Console.CursorTop - 1);

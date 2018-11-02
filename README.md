@@ -1,6 +1,18 @@
+![uml cheatsheet](https://github.com/simonassank/ktu-oop/blob/lab-1/pics/umlscr.png?raw=true)
+
 * [Creational](#creational-design-patterns)
 * [Structural](#structural-design-patterns)
 * [Behavioral](#behavioral-design-patterns)
+
+* [Simple Factory](#-simple-factory)
+* [Factory Method](#-factory-method)
+* [Abstract Factory](#-abstract-factory)
+* [Builder](#-builder)
+* [Prototype](#-prototype)
+* [Singleton](#-singleton)
+* [Command](#-command)
+* [Observer](#-observer)
+* [Strategy](#-strategy)
 
 Creational Design Patterns
 ==========================
@@ -30,6 +42,8 @@ Wikipedia says
 > In object-oriented programming (OOP), a factory is an object for creating other objects – formally a factory is a function or method that returns objects of a varying prototype or class from some method call, which is assumed to be "new".
 
 **Programmatic Example**
+
+![](https://github.com/simonassank/ktu-oop/blob/lab-1/pics/factory.png?raw=true)
 
 First of all we have a door interface and the implementation
 ```php
@@ -100,6 +114,8 @@ Wikipedia says
 > In class-based programming, the factory method pattern is a creational pattern that uses factory methods to deal with the problem of creating objects without having to specify the exact class of the object that will be created. This is done by creating objects by calling a factory method—either specified in an interface and implemented by child classes, or implemented in a base class and optionally overridden by derived classes—rather than by calling a constructor.
 
  **Programmatic Example**
+
+// todo missing uml
 
 Taking our hiring manager example above. First of all we have an interviewer interface and some implementations for it
 
@@ -188,6 +204,8 @@ Wikipedia says
 > The abstract factory pattern provides a way to encapsulate a group of individual factories that have a common theme without specifying their concrete classes
 
 **Programmatic Example**
+
+![](https://github.com/simonassank/ktu-oop/blob/lab-1/pics/abstract_factory.png?raw=true)
 
 Translating the door example above. First of all we have our `Door` interface and some implementation for it
 
@@ -323,6 +341,8 @@ As you can see; the number of constructor parameters can quickly get out of hand
 
 **Programmatic Example**
 
+![](https://github.com/simonassank/ktu-oop/blob/lab-1/pics/builder.png?raw=true)
+
 The sane alternative is to use the builder pattern. First of all we have our burger that we want to make
 
 ```php
@@ -422,6 +442,8 @@ In short, it allows you to create a copy of an existing object and modify it to 
 
 **Programmatic Example**
 
+![](https://github.com/simonassank/ktu-oop/blob/lab-1/pics/prototype.png?raw=true)
+
 In PHP, it can be easily done using `clone`
 
 ```php
@@ -490,6 +512,8 @@ Wikipedia says
 Singleton pattern is actually considered an anti-pattern and overuse of it should be avoided. It is not necessarily bad and could have some valid use-cases but should be used with caution because it introduces a global state in your application and change to it in one place could affect in the other areas and it could become pretty difficult to debug. The other bad thing about them is it makes your code tightly coupled plus mocking the singleton could be difficult.
 
 **Programmatic Example**
+
+![](https://github.com/simonassank/ktu-oop/blob/lab-1/pics/singleton.png?raw=true)
 
 To create a singleton, make the constructor private, disable cloning, disable extension and create a static variable to house the instance
 ```php
@@ -560,6 +584,8 @@ Wikipedia says
 > In software engineering, the adapter pattern is a software design pattern that allows the interface of an existing class to be used as another interface. It is often used to make existing classes work with others without modifying their source code.
 
 **Programmatic Example**
+
+![](https://github.com/simonassank/ktu-oop/blob/lab-1/pics/class_adapter.png?raw=true)
 
 Consider a game where there is a hunter and he hunts lions.
 
@@ -638,8 +664,6 @@ $hunter->hunt($wildDogAdapter);
 Real world example
 > Consider you have a website with different pages and you are supposed to allow the user to change the theme. What would you do? Create multiple copies of each of the pages for each of the themes or would you just create separate theme and load them based on the user's preferences? Bridge pattern allows you to do the second i.e.
 
-![With and without the bridge pattern](https://cloud.githubusercontent.com/assets/11269635/23065293/33b7aea0-f515-11e6-983f-98823c9845ee.png)
-
 In Plain Words
 > Bridge pattern is about preferring composition over inheritance. Implementation details are pushed from a hierarchy to another object with a separate hierarchy.
 
@@ -647,6 +671,8 @@ Wikipedia says
 > The bridge pattern is a design pattern used in software engineering that is meant to "decouple an abstraction from its implementation so that the two can vary independently"
 
 **Programmatic Example**
+
+![](https://github.com/simonassank/ktu-oop/blob/lab-1/pics/bridge.png?raw=true)
 
 Translating our WebPage example from above. Here we have the `WebPage` hierarchy
 
@@ -742,6 +768,8 @@ Wikipedia says
 > In object-oriented programming, the decorator pattern is a design pattern that allows behavior to be added to an individual object, either statically or dynamically, without affecting the behavior of other objects from the same class. The decorator pattern is often useful for adhering to the Single Responsibility Principle, as it allows functionality to be divided between classes with unique areas of concern.
 
 **Programmatic Example**
+
+![](https://github.com/simonassank/ktu-oop/blob/lab-1/pics/decorator.png?raw=true)
 
 Lets take coffee for example. First of all we have a simple coffee implementing the coffee interface
 
@@ -862,6 +890,8 @@ Wikipedia says
 
 **Programmatic Example**
 
+![](https://github.com/simonassank/ktu-oop/blob/lab-1/pics/facade.png?raw=true)
+
 Taking our computer example from above. Here we have the computer class
 
 ```php
@@ -964,6 +994,8 @@ Wikipedia says
 > In object-oriented programming, the command pattern is a behavioral design pattern in which an object is used to encapsulate all information needed to perform an action or trigger an event at a later time. This information includes the method name, the object that owns the method and values for the method parameters.
 
 **Programmatic Example**
+
+![](https://github.com/simonassank/ktu-oop/blob/lab-1/pics/command.png?raw=true)
 
 First of all we have the receiver that has the implementation of every action that could be performed
 ```php
@@ -1079,6 +1111,8 @@ Wikipedia says
 
 **Programmatic example**
 
+![](https://github.com/simonassank/ktu-oop/blob/lab-1/pics/observer1.png?raw=true)
+
 Translating our example from above. First of all we have job seekers that need to be notified for a job posting
 ```php
 class JobPost
@@ -1168,6 +1202,8 @@ Wikipedia says
 > In computer programming, the strategy pattern (also known as the policy pattern) is a behavioural software design pattern that enables an algorithm's behavior to be selected at runtime.
 
 **Programmatic example**
+
+![](https://github.com/simonassank/ktu-oop/blob/lab-1/pics/strategy.png?raw=true)
 
 Translating our example from above. First of all we have our strategy interface and different strategy implementations
 

@@ -16,18 +16,18 @@ namespace SpaceInvaders.Domain.Models.Helpers
         private readonly List<Enemy> _enemies = new List<Enemy>();
         private SpaceShip _spaceShip = new SpaceShip();
 
-        private EasyEnemy EasyEnemy { get; }
-        private MediumEnemy MediumEnemy { get; }
-        private HardEnemy HardEnemy { get; }
+        private Enemy EasyEnemy { get; }
+        private Enemy MediumEnemy { get; }
+        private Enemy HardEnemy { get; }
         private EnemyVisitorBase Visitor { get; set; }
         private DrawTemplateBase Theme { get; set; }
         private GameBoard Board { get; set; }
 
         public BoardBuilder()
         {
-            EasyEnemy = new EasyEnemy();
-            MediumEnemy = new MediumEnemy();
-            HardEnemy = new HardEnemy();
+            EasyEnemy = new EasyEnemyFactory().createEnemy();
+            MediumEnemy = new MediumEnemyFactory().createEnemy();
+            HardEnemy = new HardEnemyFactory().createEnemy();
         }
 
         public GameBoard Build()

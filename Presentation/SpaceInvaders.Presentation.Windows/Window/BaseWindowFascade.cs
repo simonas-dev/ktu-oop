@@ -46,6 +46,7 @@ namespace SpaceInvaders.Presentation.Windows.Window
             {
                 Render();
                 HandleInput();
+                Thread.Sleep(16);
             }
         }
 

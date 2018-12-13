@@ -71,9 +71,7 @@ namespace SpaceInvaders.Business.Controllers
             if (keyPressed == "LeftArrow")
                 _spaceShipPosition.MoveLeft();
             else if (keyPressed == "RightArrow")
-            {
                 _spaceShipPosition.MoveRight();
-            }
         }
 
         public void Shoot()

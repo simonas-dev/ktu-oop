@@ -10,7 +10,6 @@ namespace SpaceInvaders.Presentation.GUI
         public override void InitializeGui()
         {
             Console.WriteLine("Adapter works");
-            Console.ReadKey();
             _windowFascade.Run();
         }
     }

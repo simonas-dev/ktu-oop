@@ -20,6 +20,8 @@ namespace SpaceInvaders.Presentation.Views
 
         private Command _shootCommand;
 
+        private ConsoleKey _keyQueued;
+
         public string Name => "GameView";
 
         public void InsertData(object obj)
@@ -36,6 +38,25 @@ namespace SpaceInvaders.Presentation.Views
 
         public string GetChangingPart()
         {
+            switch (_keyQueued)
+            {
+                case ConsoleKey.LeftArrow:
+                case ConsoleKey.RightArrow:
+                    _movePlayerCommand.Execute(_keyQueued.ToString());
+                    break;
+                case ConsoleKey.Spacebar:
+                    _shootCommand.Execute();
+                    break;
+                case ConsoleKey.E:
+                    HandleRequest("e");
+                    break;
+                case ConsoleKey.P:
+                    HandleRequest("p");
+                    break;
+            }
+            _keyQueued = ConsoleKey.F24;
+
+            _refreshGameCommand.Execute();
             return Game.Instance.ToString();
         }
 
@@ -43,27 +64,8 @@ namespace SpaceInvaders.Presentation.Views
         {
             if (Console.KeyAvailable)
             {
-                var key = Console.ReadKey().Key;
-
-                switch (key)
-                {
-                    case ConsoleKey.LeftArrow:
-                    case ConsoleKey.RightArrow:
-                        _movePlayerCommand.Execute(key.ToString());
-                        break;
-                    case ConsoleKey.Spacebar:
-                        _shootCommand.Execute();
-                        break;
-                    case ConsoleKey.E:
-                        HandleRequest("e");
-                        break;
-                    case ConsoleKey.P:
-                        HandleRequest("p");
-                        break;
-                }
+                _keyQueued = Console.ReadKey().Key;
             }
-
-            _refreshGameCommand.Execute();
         }
 
         public void AddController(IController controller)

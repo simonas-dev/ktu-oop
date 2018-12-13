@@ -36,8 +36,9 @@ namespace SpaceInvaders.Presentation.Windows.Window
             Mediator mediator = InstantiateMediator();
             Console.WriteLine("Facade works");
             Thread.Sleep(1000);
-
-            _controller = new HomeController(ViewsFactory.Create("HomeController"), this, new PlayerRepository(), mediator);
+            Console.ReadKey();
+            IPlayerRepository playerRepoProxy = new PlayerRepoProxy(new PlayerRepository());
+            _controller = new HomeController(ViewsFactory.Create("HomeController"), this, playerRepoProxy, mediator);
             _showProfilesCommand = new ShowPlayerProfilesCommand((IHomeController)_controller);
             _showProfilesCommand.Execute();
 

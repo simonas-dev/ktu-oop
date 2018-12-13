@@ -12,6 +12,7 @@ using SpaceInvaders.Shared.Repository;
 using SpaceInvaders.Shared.Repository.Interface;
 using System;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace SpaceInvaders.Presentation.Windows.Window
 {
@@ -33,9 +34,9 @@ namespace SpaceInvaders.Presentation.Windows.Window
         public void Run()
         {
             Mediator mediator = InstantiateMediator();
-
             Console.WriteLine("Facade works");
-            Console.ReadKey();
+            Thread.Sleep(1000);
+
             _controller = new HomeController(ViewsFactory.Create("HomeController"), this, new PlayerRepository(), mediator);
             _showProfilesCommand = new ShowPlayerProfilesCommand((IHomeController)_controller);
             _showProfilesCommand.Execute();
@@ -111,7 +112,7 @@ namespace SpaceInvaders.Presentation.Windows.Window
             for (var i = 0; i < lines; i++)
             {
                 if (Console.CursorTop - 1 <= 0) continue;
-                Console.SetCursorPosition(0, Console.CursorTop - 1);
+                Console.SetCursorPosition(0, Console.CursorTop);
                 Console.Write(new string(' ', Console.WindowWidth));
                 Console.SetCursorPosition(0, Console.CursorTop - 1);
             }

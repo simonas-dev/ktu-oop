@@ -12,6 +12,7 @@ using SpaceInvaders.Shared.Base.View;
 using SpaceInvaders.Shared.Base.Window;
 using System.Collections.Generic;
 using SpaceInvaders.Shared.Base.Handlers;
+using System.Threading;
 
 namespace SpaceInvaders.Business.Controllers
 {
@@ -70,9 +71,7 @@ namespace SpaceInvaders.Business.Controllers
             if (keyPressed == "LeftArrow")
                 _spaceShipPosition.MoveLeft();
             else if (keyPressed == "RightArrow")
-            {
                 _spaceShipPosition.MoveRight();
-            }
         }
 
         public void Shoot()

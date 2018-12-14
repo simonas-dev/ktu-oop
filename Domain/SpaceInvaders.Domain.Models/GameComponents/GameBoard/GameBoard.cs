@@ -13,7 +13,7 @@ namespace SpaceInvaders.Domain.Models.GameComponents.GameBoard
         private readonly EnemyVisitorBase _visitor;
 
         private SpaceShip _spaceShip;
-
+         
         private readonly IEnemyCollection _enemies; // enemies subscribers
 
         private readonly IIterator _iterator;

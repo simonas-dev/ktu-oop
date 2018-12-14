@@ -22,28 +22,27 @@ namespace SpaceInvaders.Presentation.Views.Profile
 
             var expressionParts = expression.Split(" ");
 
-            if (expressionParts.Length < 3) throw new InvalidOperationException();
-
-            var command = expressionParts[0];
-            var entityType = expressionParts[1];
-            var name = expressionParts[2];
-
-            if (command == "Select" || command == "select" || command == "SELECT")
-            {
-                if (entityType == "Profile" || entityType == "profile" || entityType == "PROFILE")
-                {
-                    exp = new PlayerProfilesExpression(name);
-                    return exp.Interpret(_context);
-                }
+            if (expressionParts.Length < 3) {
+                Console.WriteLine($"CLI Help: select profile ProfileName");
+                Console.WriteLine($"CLI Help: create profile ProfileName");
+                return null;
             }
 
-            if (command == "Create" || command == "create" || command == "CREATE")
+            var command = expressionParts[0].ToLower();
+
+            var entityType = expressionParts[1].ToLower();
+            var name = expressionParts[2];
+
+            if (command.ToLower() == "select" && entityType == "profile")
             {
-                if (entityType == "Profile" || entityType == "profile" || entityType == "PROFILE")
-                {
-                    exp = new AddPlayerProfileExpression(name);
-                    return exp.Interpret(_context);
-                }
+                exp = new PlayerProfilesExpression(name);
+                return exp.Interpret(_context);
+            }
+
+            if (command.ToLower() == "create" && entityType == "profile")
+            {
+                exp = new AddPlayerProfileExpression(name);
+                return exp.Interpret(_context);
             }
 
             throw new InvalidOperationException();

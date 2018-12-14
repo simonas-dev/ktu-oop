@@ -4,8 +4,7 @@ namespace SpaceInvaders.Domain.Models.GameComponents.Enemies
 {
     public class EasyEnemy : Enemy
     {
-        public EasyEnemy()
-        {
+        public EasyEnemy() {
             Health = 1;
         }
 

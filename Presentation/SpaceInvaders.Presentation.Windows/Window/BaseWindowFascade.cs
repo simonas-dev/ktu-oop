@@ -12,6 +12,7 @@ using SpaceInvaders.Shared.Repository;
 using SpaceInvaders.Shared.Repository.Interface;
 using System;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace SpaceInvaders.Presentation.Windows.Window
 {
@@ -24,17 +25,20 @@ namespace SpaceInvaders.Presentation.Windows.Window
 
         public BaseWindowFascade()
         {
-            Console.SetWindowSize(160,40);
+            try {
+                Console.SetWindowSize(160, 40);
+            } catch {}
             Console.CursorVisible = false;
         }
 
         public void Run()
         {
             Mediator mediator = InstantiateMediator();
-
             Console.WriteLine("Facade works");
+            Thread.Sleep(1000);
             Console.ReadKey();
-            _controller = new HomeController(ViewsFactory.Create("HomeController"), this, new PlayerRepository(), mediator);
+            IPlayerRepository playerRepoProxy = new PlayerRepoProxy(new PlayerRepository());
+            _controller = new HomeController(ViewsFactory.Create("HomeController"), this, playerRepoProxy, mediator);
             _showProfilesCommand = new ShowPlayerProfilesCommand((IHomeController)_controller);
             _showProfilesCommand.Execute();
 
@@ -42,6 +46,7 @@ namespace SpaceInvaders.Presentation.Windows.Window
             {
                 Render();
                 HandleInput();
+                Thread.Sleep(16);
             }
         }
 
@@ -106,10 +111,10 @@ namespace SpaceInvaders.Presentation.Windows.Window
 
         private static void ClearLastLinesInWindow(int lines = 1)
         {
-            for (var i = 1; i <= lines; i++)
+            for (var i = 0; i < lines; i++)
             {
                 if (Console.CursorTop - 1 <= 0) continue;
-                Console.SetCursorPosition(0, Console.CursorTop - 1);
+                Console.SetCursorPosition(0, Console.CursorTop);
                 Console.Write(new string(' ', Console.WindowWidth));
                 Console.SetCursorPosition(0, Console.CursorTop - 1);
             }

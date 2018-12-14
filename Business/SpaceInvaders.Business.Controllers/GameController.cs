@@ -30,7 +30,15 @@ namespace SpaceInvaders.Business.Controllers
             Game game = Game.Instance;
 
             _strategy = strategy;
-            _score = new RealScore();
+            
+            if (strategy.ProfileName.Equals("Justtest"))
+            {
+                _score = new NullScore();
+            }
+            else
+            {
+                _score = new RealScore();
+            }
             game.Score = _score;
             if (_spaceShipPosition == null)
             {

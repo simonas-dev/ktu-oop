@@ -1,4 +1,5 @@
-[2018-13-12--18-27-39]: Mediator pattern: registering handlers 
-[2018-13-12--18-27-39]: Composite pattern: child 
-[2018-13-12--18-27-39]: Composite pattern: add 
-[2018-13-12--18-27-39]: Mediator pattern: qeury and handlers meeting 
+[2018-14-12--10-27-09]: Mediator pattern: registering handlers 
+[2018-14-12--10-27-27]: Composite pattern: child 
+[2018-14-12--10-27-27]: Composite pattern: add 
+[2018-14-12--10-27-28]: Mediator pattern: qeury and handlers meeting 
+[2018-14-12--10-27-32]: Interpreter pattern: interpreting text: select profile 

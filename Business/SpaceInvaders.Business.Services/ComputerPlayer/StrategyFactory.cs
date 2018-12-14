@@ -6,16 +6,16 @@ namespace SpaceInvaders.Business.Services.ComputerPlayer
 {
     public class StrategyFactory : IFactory<IBoardStrategy, Interfaces.Strategies>
     {
-        public IBoardStrategy Create(Interfaces.Strategies param)
+        public IBoardStrategy Create(Interfaces.Strategies param, string name)
         {
             switch (param)
             {
                 case Interfaces.Strategies.HardStrategy:
-                    return new HardStrategy();
+                    return new HardStrategy(name);
                 case Interfaces.Strategies.MediumStrategy:
-                   return new MediumStrategy();
+                   return new MediumStrategy(name);
                 default:
-                    return new EasyStrategy();
+                    return new EasyStrategy(name);
             }
         }
     }

@@ -14,7 +14,8 @@ namespace SpaceInvaders.Shared.Repository
             {
                 new Player() { Name = "Hank" },
                 new Player() { Name = "John" },
-                new Player() { Name = "Paul" }
+                new Player() { Name = "Paul" },
+                new Player() { Name = "Justtest" }
             };
         }
 

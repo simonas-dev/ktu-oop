@@ -41,7 +41,7 @@ namespace SpaceInvaders.Presentation.Views
                     builder.AppendLine((i + 1) + ". " + _players[i].Name);
                 }
             }
-            builder.AppendLine("Enter name of profile");
+            builder.AppendLine("Enter name of profile. Example 'select profile John'");
             return builder.ToString();
         }
 

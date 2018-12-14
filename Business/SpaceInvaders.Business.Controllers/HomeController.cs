@@ -20,6 +20,8 @@ namespace SpaceInvaders.Business.Controllers
         private readonly IFactory<IBoardStrategy, Strategies> _strategyFactory;
         private readonly IMediate _mediator;
 
+        public string Name { get; set; }
+
         public HomeController(IList<IView> views, IWindowFascade windowFascade, IPlayerRepository playerRepository, IMediate mediator) : 
             base(views, windowFascade)
         {
@@ -38,7 +40,7 @@ namespace SpaceInvaders.Business.Controllers
         public void ShowGame(string parameter)
         {
             var strategyDifficulty = Int32.Parse(parameter, NumberStyles.Any);
-            var strategy = _strategyFactory.Create((Strategies)strategyDifficulty);
+            var strategy = _strategyFactory.Create((Strategies)strategyDifficulty, Name);
             var controller = ChangeController(Contracts.Contracts.GameController, strategy);
             WindowFacade.ChangeController(controller);
         }
@@ -50,6 +52,8 @@ namespace SpaceInvaders.Business.Controllers
             var client = new Client(context);
 
             var player = client.Interpret(sentence);
+
+            Name = player.Name;
 
             ChangeView(Contracts.Contracts.MenuView);
 

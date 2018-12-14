@@ -6,6 +6,7 @@
         int InitialSize { get; }
         int EasyEnemyProbability { get; }
         int MediumEnemyProbability { get; }
-        int HardEnemyProbability { get; }      
+        int HardEnemyProbability { get; }
+        string ProfileName { get; set; }
     }
 }

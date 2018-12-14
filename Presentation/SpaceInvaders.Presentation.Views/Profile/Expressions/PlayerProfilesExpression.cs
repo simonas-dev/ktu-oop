@@ -21,6 +21,13 @@ namespace SpaceInvaders.Presentation.Views.Profile.Expressions
                 .GetAllPlayers()
                 .SingleOrDefault(x=>x.Name == _name);
 
+            if (player == null)
+            {
+                var index = int.Parse(_name);
+                player = context
+                    .GetAllPlayers()[index];
+            }
+
             Console.WriteLine($"You have selected player: {player?.Name}");
 
             Console.ReadKey();
